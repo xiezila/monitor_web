@@ -1,0 +1,75 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=560">
+    <link rel="stylesheet" href="./json-forms_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./json-forms_files/bootstrap-select.min.css">
+    <link rel="stylesheet" href="./json-forms_files/brutusin-json-forms.min.css">
+
+    <script src="./json-forms_files/jquery-1.11.3.min.js"></script>
+    <script src="./json-forms_files/bootstrap.min.js"></script>
+    <script src="./json-forms_files/bootstrap-select.min.js"></script>
+    <script src="./json-forms_files/brutusin-json-forms.js"></script>
+    <script src="./json-forms_files/brutusin-json-forms-bootstrap.min.js"></script>
+    <script src="./json-forms_files/demo.js"></script>
+    
+    <script lang="javascript">
+        var BrutusinForms = brutusin["json-forms"];
+        var bf;
+
+        function generateForm() {
+            // var schema;
+            // eval("schema=" + JSON.stringify(demo, null, 2));
+            $('#formLink').click();
+            bf = BrutusinForms.create(schema);
+            var container = document.getElementById('container');
+            bf.render(container, null);
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="./json-forms_files/icon" style="border: 0; width: 50px; height: 50px;">Modbus安全协议栈配置与监控界面</h1>
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="collapsed" id="formLink" role="button" data-toggle="collapse" data-parent="#accordion" href="http://brutusin.org/json-forms/#collapseForm"
+                            aria-expanded="false" aria-controls="collapseForm">
+                                配置
+                            </a>
+                    </h4>
+                </div>
+                <div id="collapseForm" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="alert alert-info" role="alert">
+                        <strong id="example-title">
+                        Objects, arrays, enums, default, required, minItems, uniqueItems                            </strong>
+                        <div id="example-desc">sxssssssssssss</div>
+                    </div>
+                    <div id="container" style="padding-left:12px;padding-right:12px;padding-bottom: 12px;"></div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary" onclick="alert(JSON.stringify(bf.getData(), null, 4))">getData()</button>&nbsp;
+                        <button class="btn btn-primary" onclick="if (bf.validate()) {
+                                        alert(&#39;Validation succeeded&#39;)
+                                    }">validate()</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script lang="javascript">
+        generateForm();
+    </script>
+
+
+
+</body>
+
+</html>
